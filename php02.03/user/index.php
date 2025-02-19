@@ -5,17 +5,31 @@ include '../koneksi.php';
 <a href="tambah_form.php">Tambah User</a>
 <br>
 
-<?php
-$sql = "SELECT * FROM users";
-$result = $conn->query($sql);
+<table border="1">
+    <tr>
+        <td>id user</td>
+        <td>username</td>
+    </tr>
+    <?php
+    $sql = "SELECT * FROM users";
+    $result = $conn->query($sql);
 
-if ($result->num_rows > 0) {
-    // output data of each row
-    while ($row = $result->fetch_assoc()) {
-        echo "id: " . $row["id_user"] . " - Username: " . $row["username"] . " " . $row["password"] . "<br>";
+    if ($result->num_rows > 0) {
+        // output data of each row
+        while ($row = $result->fetch_assoc()) {
+    ?>
+            <tr>
+                <td>
+                    <?php echo "id: " . $row["id_user"] ?>
+                </td>
+                <td>
+                    <?php echo $row["username"] ?>
+                </td>
+            </tr>
+    <?php
+        }
+    } else {
+        echo "0 results";
     }
-} else {
-    echo "0 results";
-}
-$conn->close();
-?>
+    $conn->close();
+    ?>

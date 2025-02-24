@@ -3,14 +3,14 @@
 include '../koneksi.php';
 
 // Ambil ID user dari parameter URL
-$id = $_GET['id'] ?? null;
+$id_user = $_GET['id_user'] ?? null;
 
-if (!$id) {
+if (!$id_user) {
     die("ID tidak ditemukan.");
 }
 
 // Query untuk mendapatkan data user
-$sql = "SELECT * FROM users WHERE id_user = $id";
+$sql = "SELECT * FROM users WHERE id_user = $id_user";
 $result = $conn->query($sql);
 
 // Jika data ditemukan

@@ -32,7 +32,7 @@ include '../koneksi.php';
                     <?php echo $row["username"] ?>
                 </td>
                 <td>
-                    <a href="edit_form.php?id=<?php echo $row["id_user"] ?>">Edit</a>
+                    <a href="edit_form.php?id_user=<?php echo $row["id_user"] ?>">Edit</a>
                     <a href="hapus.php?id_user=<?php echo $row["id_user"] ?>">Hapus</a>
                 </td>
             </tr>

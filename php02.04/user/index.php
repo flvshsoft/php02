@@ -23,6 +23,7 @@ include '../koneksi.php';
                     <th>Username</th>
                     <th>Password</th>
                     <th>Role</th>
+                    <th>Aksi</th>
                 </tr>
             </thead>
             <tbody>
@@ -38,6 +39,10 @@ include '../koneksi.php';
                             <td><?php echo $row["username"] ?></td>
                             <td><?php echo $row["password"] ?></td>
                             <td><?php echo $row["role"] ?></td>
+                            <td>
+                                <a href="edit_form.php?id_user=<?php echo $row["id_user"] ?>" class="btn btn-warning">Edit</a>
+                                <a href="hapus.php?id_user=<?php echo $row["id_user"] ?>" class="btn btn-danger">Hapus</a>
+                            </td>
                         </tr>
                 <?php
                     }
